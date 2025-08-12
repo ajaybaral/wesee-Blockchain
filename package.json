@@ -1,0 +1,43 @@
+{
+  "name": "wesee-blockchain-game",
+  "version": "1.0.0",
+  "description": "Complete blockchain gaming platform with smart contracts, backend API, frontend, and leaderboard",
+  "main": "README.md",
+  "scripts": {
+    "install:all": "npm run install:contracts && npm run install:backend && npm run install:leaderboard",
+    "install:contracts": "cd contracts && npm install",
+    "install:backend": "cd api && npm install",
+    "install:leaderboard": "cd tools && npm install",
+    "compile": "cd contracts && npx hardhat compile",
+    "test": "cd contracts && npx hardhat test",
+    "deploy": "cd contracts && npx hardhat run scripts/deploy.js --network localhost",
+    "start:backend": "cd api && npm start",
+    "start:leaderboard": "cd tools && npm start",
+    "dev:backend": "cd api && npm run dev",
+    "dev:leaderboard": "cd tools && npm run dev",
+    "start:all": "concurrently \"npm run start:backend\" \"npm run start:leaderboard\"",
+    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:leaderboard\""
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "smart-contracts",
+    "gaming",
+    "solidity",
+    "nodejs",
+    "express",
+    "ethers"
+  ],
+  "author": "Wesee Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
